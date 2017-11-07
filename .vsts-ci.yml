@@ -1,7 +1,5 @@
 # YAML build definition for this app
 # This file is needed only when you want to model your build definitions using YAML
-queue: Default
-
 steps:
 - script: npm install
 
@@ -19,3 +17,12 @@ steps:
     PathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
     ArtifactName: drop
     ArtifactType: Container
+
+- task: AzureFileCopy2@1.*
+  inputs:
+    SourcePath: deploy.sh
+    ConnectedServiceNameSelector: ConnectedServiceNameARM
+    ConnectedServiceNameARM: RMPM (afc11291-9826-46be-b852-70349146ddf8)
+    Destination: AzureBlob
+    StorageAccountRM: adventworks
+    ContainerName: test
