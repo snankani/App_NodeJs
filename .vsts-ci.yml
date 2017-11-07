@@ -22,7 +22,7 @@ steps:
   inputs: 
     SourcePath: deploy.sh 
     ConnectedServiceNameSelector: ConnectedServiceNameARM 
-    ConnectedServiceNameARM: "DTLQA (c94bda7a-0577-4374-9c53-0e46a9fb0f70)" 
+    ConnectedServiceNameARM: "DTL QA" 
     Destination: AzureBlob 
     StorageAccountRM: adventworks 
     ContainerName: test 
