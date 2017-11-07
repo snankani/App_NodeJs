@@ -22,7 +22,7 @@ steps:
   inputs:
     SourcePath: deploy.sh
     ConnectedServiceNameSelector: ConnectedServiceNameARM
-    ConnectedServiceNameARM: RMPM (afc11291-9826-46be-b852-70349146ddf8)
+    ConnectedServiceNameARM: "RMPM (afc11291-9826-46be-b852-70349146ddf8)"
     Destination: AzureBlob
     StorageAccountRM: adventworks
     ContainerName: test
