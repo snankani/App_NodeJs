@@ -17,12 +17,3 @@ steps:
     PathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
     ArtifactName: drop
     ArtifactType: Container
-
-- task: AzureFileCopy@1
-  inputs: 
-    SourcePath: deploy.sh 
-    ConnectedServiceNameSelector: ConnectedServiceNameARM 
-    ConnectedServiceNameARM: "DTL QA" 
-    Destination: AzureBlob 
-    StorageAccountRM: adventworks 
-    ContainerName: test 
