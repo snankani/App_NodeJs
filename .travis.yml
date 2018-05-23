@@ -1,7 +1,7 @@
 language: javascript
 
 install:
-- npm install gulp -g
+- npm install gulp
 
 script:
 - gulp
