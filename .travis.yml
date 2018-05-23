@@ -17,5 +17,6 @@ jobs:
       deploy:
         provider: azure_web_apps
         site: nodesample
+        verbose: true
       on: master
         
