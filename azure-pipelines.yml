@@ -25,3 +25,19 @@ steps:
     docker build -t $(imageName) . 
     docker push $(imageName)
 
+- task: Kubernetes@1
+  displayName: Apply Kub Deployment 
+  inputs:
+    connectionType: Kubernetes Service Connection
+    kubernetesServiceEndpoint: gopiaks
+    command: apply
+    arguments: -f cicd/deploy.yml
+
+- task: Kubernetes@1
+  displayName: Apply Kub Services
+  inputs:
+    connectionType: Kubernetes Service Connection
+    kubernetesServiceEndpoint: gopiaks
+    command: apply
+    arguments: -f cicd/service.yml   
+
