@@ -27,7 +27,7 @@ steps:
 
 - script: |
     deployfile=`cat cicd/deploy.yml | sed "s/{{BuildId}}/$(Build.BuildId)/g"`
-    cat $deployfile > deploynew.yml
+    echo $deployfile > deploynew.yml
     cat deploynew.yml
 
 - task: Kubernetes@1
