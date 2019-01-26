@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  imageName: 'gopinathch/simplenode:latest'
+  imageName: 'gopinathch/simplenode:$(Build.BuildId)'
 
 steps:
 
@@ -25,13 +25,17 @@ steps:
     docker build -t $(imageName) . 
     docker push $(imageName)
 
+- script: |
+    deployfile=`cat cicd/deploy.yml | sed "s/{{BuildId}}/$(Build.BuildId)/g"`
+    echo deployfile > deploynew.yml
+
 - task: Kubernetes@1
   displayName: Apply Kub Deployment 
   inputs:
     connectionType: Kubernetes Service Connection
     kubernetesServiceEndpoint: gopiaks
     command: apply
-    arguments: -f cicd/deploy.yml
+    arguments: -f deploynew.yml
 
 - task: Kubernetes@1
   displayName: Apply Kub Services

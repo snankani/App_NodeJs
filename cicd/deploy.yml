@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: gopinathch/simplenode
+        image: gopinathch/simplenode:{{BuildId}}
         ports:
         - containerPort: 8080
