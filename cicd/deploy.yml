@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simplenode
+  labels:
+    app: simplenode
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simplenode
+  template:
+    metadata:
+      labels:
+        app: simplenode
+    spec:
+      containers:
+      - name: helloworld
+        image: gopinathch/simplenode
+        ports:
+        - containerPort: 8080
