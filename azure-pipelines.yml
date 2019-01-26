@@ -22,6 +22,6 @@ steps:
     command: login
 
 - script: | 
-    docker build -f Dockerfile -t $(imageName) . |
+    docker build -t $(imageName) . 
     docker push $(imageName)
 
