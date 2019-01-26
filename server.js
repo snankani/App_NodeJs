@@ -9,7 +9,7 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 app.get('/', (req, res) => {
-  res.send('Hello World from Kubernetes CICD !\n');
+  res.send('Hello World from Kubernetes CICD 2 !\n');
 });
 
 app.listen(PORT, HOST);
